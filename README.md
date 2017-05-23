@@ -18,18 +18,8 @@ In both figures above, the first and second rows shows training images and image
 remaining three rows are the results of naïve spatial VAEs, spatial VAEs via MVN distributions and
 spatial VAEs via low-rank MVN distributions, respectively.
 
-For celebA dataset, it is clear that spatial VAEs can generate images with more details than the original
-VAEs. Due to the lack of explicit spatial information, the original VAEs produce face images with little
-details like hair near the borders. While naïve spatial VAEs seem to address this problem, most faces
-have only incomplete hairs as naïve spatial VAEs cannot capture the relationships among different
-locations. Theoretically, spatial VAEs via MVN distributions are able to incorporate interactions
-among locations. However, the results are strange faces with some distortions. We believe the
-reason is that adding dependencies among locations through restrictions on distribution variances is
-not effective and sufficient. To tackle this, spatial VAEs via low-rank MVN distributions that have
-restricted means are proposed and generate faces with appealing visual appearances.
+For details of our work, please refer to [Spatial Variational Auto-Encoding via Matrix-Variate Normal Distributions](https://arxiv.org/abs/1705.06821).
 
-For cifar dataset, the original VAEs only produce images composed of several colored areas. It is
-obvious that all three implementations of spatial VAEs generate images with more details.
 
 
 ## Datasets:
