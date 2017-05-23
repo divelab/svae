@@ -31,7 +31,7 @@ You can use other datasets such as [The Street View House Numbers (SVHN) Dataset
 2. Get the datasets ready;
 3. Set arguments in main.py;
 4. Call python main.py or python main.py --action=train to train the model;
-5. If you wish to use "parzen window" to evaluate the model, call python main.py --action=test.
+5. If you wish to use "parzen window" to evaluate the model, set a checkpoint in arguments for the model to reload and then call python main.py --action=test.
 
 
 
