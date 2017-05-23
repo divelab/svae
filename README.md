@@ -29,7 +29,7 @@ You can use other datasets such as [The Street View House Numbers (SVHN) Dataset
 
 1. Clone or download this repository to your working directory;
 2. Get the datasets ready;
-3. Set arguments in main.py;
+3. Set arguments in main.py: set "model_name" as 'vanilla' to call tranditional VAE and use 'low_rank' to call our low_rank VAE;
 4. Call python main.py or python main.py --action=train to train the model;
 5. If you wish to use "parzen window" to evaluate the model, set a checkpoint in arguments for the model to reload and then call python main.py --action=test.
 
