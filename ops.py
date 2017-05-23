@@ -47,6 +47,36 @@ def decoder(input_sensor):
         normalizer_params={'scale': True})   
     return output
 
+def decoder_vanilla(input_sensor):
+    output = tf.expand_dims(input_sensor ,1)
+    output = tf.expand_dims(output,1)
+    output = tf.contrib.layers.conv2d_transpose(
+        output, 64, deconv_size_second, scope='deconv1', padding='VALID',
+        activation_fn=tf.nn.elu, normalizer_fn=tf.contrib.layers.batch_norm, 
+        normalizer_params={'scale': True})    
+    output = tf.contrib.layers.conv2d_transpose(
+        output, 48, deconv_size_second, scope='deconv2', stride = 2,
+        activation_fn=tf.nn.elu, normalizer_fn=tf.contrib.layers.batch_norm, 
+        normalizer_params={'scale': True})
+    output = tf.contrib.layers.conv2d_transpose(
+        output, 32, deconv_size_second, scope='deconv3', padding='VALID',
+        activation_fn=tf.nn.elu, normalizer_fn=tf.contrib.layers.batch_norm, 
+        normalizer_params={'scale': True})
+    output = tf.contrib.layers.conv2d_transpose(
+        output, 32, deconv_size, scope='deconv4', stride = 2,
+        activation_fn=tf.nn.elu, normalizer_fn=tf.contrib.layers.batch_norm, 
+        normalizer_params={'scale': True})
+    output = tf.contrib.layers.conv2d_transpose(
+        output, 16, deconv_size, scope='deconv5', stride = 2,
+        activation_fn=tf.nn.elu, normalizer_fn=tf.contrib.layers.batch_norm, 
+        normalizer_params={'scale': True})
+    output = tf.contrib.layers.conv2d_transpose(
+        output, 3, deconv_size, scope='deconv6', stride=2,
+        activation_fn=tf.nn.tanh, normalizer_fn=tf.contrib.layers.batch_norm, 
+        normalizer_params={'scale': True})   
+    return output
+
+
 
 
 def log_likelihood_gaussian(sample, mean, sigma):
