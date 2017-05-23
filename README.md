@@ -19,7 +19,22 @@ remaining three rows are the results of naïve spatial VAEs, spatial VAEs via MV
 spatial VAEs via low-rank MVN distributions, respectively.
 
 
-## How to use the code:
+## Datasets:
+
+Our experiments are based on [cifar 10](https://www.cs.toronto.edu/~kriz/cifar.html) and [cropped celebA datasets](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). We provide data reader for those two datasets. For celebA dataset, please convert it to h5 file first then call the data reader.
+
+You can use other datasets such as [The Street View House Numbers (SVHN) Dataset](http://ufldl.stanford.edu/housenumbers/) or [LSUN Dataset](http://lsun.cs.princeton.edu/2016/) as well; just write a simple data reader file. 
+
+## How to run it
+
+1. Clone or download this repository to your working directory;
+2. Get the datasets ready;
+3. Set arguments in main.py;
+4. Call python main.py or python main.py --action=train to train the model;
+5. If you wish to use "parzen window" to evaluate the model, call python main.py --action=test.
+
+
+
 
 
 
