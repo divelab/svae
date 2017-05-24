@@ -2,7 +2,22 @@
 
 This is the tensorflow implementation of our recent work, "Spatial Variational Auto-Encoding via Matrix-Variate Normal Distributions". Please check the [paper](https://arxiv.org/abs/1705.06821) for details.
 
+## Introduction
+
 In this work, we propose spatial VAEs that use latent variables as feature maps of larger size to explicitly capture spatial information. This is achieved by allowing the latent variables to be sampled from matrix-variate normal (MVN) distributions whose parameters are computed from the encoder network.
+
+If you wish to cite our work, you can use the following bib for now. 
+
+```
+@article{wang2017svae,
+  title={Spatial Variational Auto-Encoding via Matrix-Variate Normal
+Distributions},
+  author={Zhengyang Wang and Hao Yuan and Shuiwang Ji},
+  journal={arXiv preprint arXiv:1705.06821},
+  year={2017}
+}
+```
+
 
 ## Experimental results:
 1. CelebA dataset
